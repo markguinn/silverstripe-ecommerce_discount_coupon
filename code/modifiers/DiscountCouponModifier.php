@@ -195,10 +195,12 @@ class DiscountCouponModifier extends OrderModifier {
 		$items = $order->Items();
 		$subTotal = $order->SubTotal();
 		$function = self::$exclude_buyable_method;
-		foreach($items as $item) {
-			$buyable = $item->Buyable();
-			if($buyable && $buyable->hasMethod($function) && $buyable->$function($this)) {
-				$subTotal -= $item->Total();
+		if($items) {
+			foreach($items as $item) {
+				$buyable = $item->Buyable();
+				if($buyable && $buyable->hasMethod($function) && $buyable->$function($this)) {
+					$subTotal -= $item->Total();
+				}
 			}
 		}
 		if(self::$include_modifiers_in_subtotal) {
