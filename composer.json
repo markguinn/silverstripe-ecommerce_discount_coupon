@@ -1,5 +1,5 @@
 {
-	"name": "sunnysideup/ecommerce_discount_coupon",
+	"name": "markguinn/ecommerce_discount_coupon",
 	"type": "silverstripe-module",
 	"description": "adds a discount coupon functionality to your Silverstripe e-commerce application ",
 	"homepage": "http://www.silverstripe-ecommerce.com",
